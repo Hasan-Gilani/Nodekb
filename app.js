@@ -89,16 +89,15 @@ app.get('/', (req, res) => {
 });
 
 
-const port = process.env.port || 3000;
 
 app.use('/articles', articles);
 app.use('/users', users);
 
-app.listen(port, (err) => {
+app.listen((process.env.PORT || 3000), (err) => {
     if(err)
         console.log(err);
     else {
-        console.log(`Server started on port ${port}`);
+        console.log(`Server started`);
     }
 
 });
